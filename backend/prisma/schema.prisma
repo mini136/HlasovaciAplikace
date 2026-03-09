@@ -1,0 +1,22 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model PollOption {
+  id    Int      @id @default(autoincrement())
+  code  String   @unique
+  label String
+  vote  PollVote?
+}
+
+model PollVote {
+  optionId Int        @id
+  count    Int        @default(0)
+  option   PollOption @relation(fields: [optionId], references: [id], onDelete: Cascade)
+}

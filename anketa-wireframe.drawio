@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" modified="2026-02-23T12:00:00.000Z" agent="GPT-5.3-Codex" version="24.7.17" editor="www.diagrams.net">
+  <diagram id="poll-wireframe-1" name="Anketa Wireframe">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Wireframe: Jednootázková anketa" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="520" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="screen" value="UI obrazovka (React + TypeScript + Vite)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="760" height="820" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="header" value="Anketa dne" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#f5f5f5;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="120" width="700" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="question" value="Otázka: Kolik otevřených záložek je ještě normální?" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#cccccc;fillColor=#ffffff;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="200" width="700" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="optA" value="( ) a) 1–5 záložek, jsem minimalista" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#cccccc;fillColor=#ffffff;align=left;spacingLeft=12;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="70" y="285" width="700" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="optB" value="( ) b) 6–15 záložek, pořád v pohodě" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#cccccc;fillColor=#ffffff;align=left;spacingLeft=12;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="70" y="345" width="700" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="optC" value="( ) c) 16+ záložek, chaos je moje workflow" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#cccccc;fillColor=#ffffff;align=left;spacingLeft=12;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="70" y="405" width="700" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="voteBtn" value="[ Odeslat hlas ]" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#e1f5fe;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="480" width="220" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="showBtn" value="[ Zobrazit výsledky ]" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#fff9c4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="220" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="results" value="Výsledky (sdílené pro všechny uživatele):&#xa;- a) 12 hlasů&#xa;- b) 27 hlasů&#xa;- c) 9 hlasů&#xa;&#xa;(načteno z backendu po HTTP)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#fafafa;align=left;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="70" y="550" width="700" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="resetTitle" value="Reset hlasování (pouze se správným tokenem)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="70" y="720" width="380" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="tokenInput" value="Token: [____________________]" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#cccccc;fillColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="750" width="460" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="resetBtn" value="[ Resetovat hlasy ]" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#ffcdd2;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="750" width="220" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="resetMsg" value="Stav: ✅ správný token → hlasy vynulovány / ❌ špatný token → reset zamítnut" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#dddddd;fillColor=#ffffff;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="70" y="805" width="700" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="archPanel" value="Backend a data (Nest + MySQL)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="700" height="820" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="frontendBox" value="Frontend&#xa;React + TypeScript + Vite&#xa;&#xa;Obrazovka ankety" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#e8f5e9;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="150" width="250" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="backendBox" value="NestJS API&#xa;&#xa;POST /vote&#xa;GET /results&#xa;POST /reset (token)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#e3f2fd;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="150" width="250" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dbBox" value="MySQL&#xa;&#xa;Tabulka votes&#xa;- option_id&#xa;- count" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;strokeColor=#999999;fillColor=#fff3e0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="180" width="80" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="tokenBox" value="Reset token&#xa;uložen na serveru&#xa;(env/config)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#fce4ec;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="350" width="250" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="persistNote" value="Po reloadu stránky data zůstávají (uloženo v MySQL)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#bdbdbd;fillColor=#f5f5f5;" vertex="1" parent="1">
+          <mxGeometry x="910" y="350" width="250" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge1" style="endArrow=classic;html=1;strokeColor=#666666;" edge="1" parent="1" source="frontendBox" target="backendBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge2" style="endArrow=classic;html=1;strokeColor=#666666;" edge="1" parent="1" source="backendBox" target="dbBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge3" style="endArrow=classic;html=1;strokeColor=#666666;" edge="1" parent="1" source="tokenBox" target="backendBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="httpLabel" value="HTTP JSON" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="120" width="90" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

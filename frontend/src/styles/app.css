@@ -1,0 +1,101 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+}
+
+.layout {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.question {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+
+.options {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.option {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 10px 14px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.results li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.total {
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+
+.reset-row {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+}
+
+.message {
+  margin: 0;
+  background: #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+}

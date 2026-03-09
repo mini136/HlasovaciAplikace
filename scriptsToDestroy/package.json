@@ -1,0 +1,11 @@
+{
+  "name": "scripts-to-destroy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ga:simulate": "node frontend-ga-browser-simulator.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.53.1"
+  }
+}

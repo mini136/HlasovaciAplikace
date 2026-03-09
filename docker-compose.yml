@@ -1,0 +1,49 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: poll-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: poll_app
+      MYSQL_USER: polluser
+      MYSQL_PASSWORD: pollpass
+    ports:
+      - "40162:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: poll-backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      PORT: 3000
+      DATABASE_URL: mysql://polluser:pollpass@mysql:3306/poll_app
+      RESET_TOKEN: MY_SECRET_RESET_TOKEN
+    ports:
+      - "40161:3000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: poll-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "40160:80"
+
+volumes:
+  mysql_data:
