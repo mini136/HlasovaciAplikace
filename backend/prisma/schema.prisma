@@ -13,6 +13,7 @@ model PollOption {
   code  String   @unique
   label String
   vote  PollVote?
+  ballots PollBallot[]
 }
 
 model PollVote {
@@ -20,3 +21,16 @@ model PollVote {
   count    Int        @default(0)
   option   PollOption @relation(fields: [optionId], references: [id], onDelete: Cascade)
 }
+
+model PollBallot {
+  id        Int        @id @default(autoincrement())
+  voterKey  String     @unique
+  optionId  Int
+  createdAt DateTime   @default(now())
+  option    PollOption @relation(fields: [optionId], references: [id], onDelete: Cascade)
+}
+
+
+
+
+

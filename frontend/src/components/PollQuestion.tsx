@@ -3,6 +3,7 @@ import type { PollOption } from "../types/poll";
 type PollQuestionProps = {
   question: string;
   options: PollOption[];
+  hasVoted: boolean;
   selectedOptionId: number | null;
   onSelect: (optionId: number) => void;
   onVote: () => void;
@@ -14,6 +15,7 @@ export function PollQuestion(props: PollQuestionProps) {
   const {
     question,
     options,
+    hasVoted,
     selectedOptionId,
     onSelect,
     onVote,
@@ -23,7 +25,7 @@ export function PollQuestion(props: PollQuestionProps) {
 
   return (
     <section className="card">
-      <h1>Anketa dne</h1>
+      <h2>🗳️ Hlasování</h2>
       <p className="question">{question}</p>
 
       <div className="options">
@@ -34,7 +36,7 @@ export function PollQuestion(props: PollQuestionProps) {
               name="poll-option"
               checked={selectedOptionId === option.id}
               onChange={() => onSelect(option.id)}
-              disabled={loading}
+              disabled={loading || hasVoted}
             />
             <span>
               {option.code}) {option.label}
@@ -45,15 +47,20 @@ export function PollQuestion(props: PollQuestionProps) {
 
       <div className="actions">
         <button
+          className="btn-primary"
           onClick={onVote}
-          disabled={loading || selectedOptionId === null}
+          disabled={loading || hasVoted || selectedOptionId === null}
         >
           Odeslat hlas
         </button>
-        <button onClick={onShowResults} disabled={loading}>
-          Zobrazit výsledky
+        <button className="btn-secondary" onClick={onShowResults} disabled={loading}>
+          Obnovit výsledky
         </button>
       </div>
+
+      {hasVoted ? (
+        <div className="voted-badge">✅ Už jsi hlasoval(a). Další hlas není povolen.</div>
+      ) : null}
     </section>
   );
 }

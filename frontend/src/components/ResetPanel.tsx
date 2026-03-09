@@ -12,9 +12,9 @@ export function ResetPanel({
   loading,
 }: ResetPanelProps) {
   return (
-    <section className="card">
-      <h2>Reset hlasování</h2>
-      <p>Reset je povolen pouze při zadání správného tokenu.</p>
+    <section className="card reset-panel">
+      <h2>⚠️ Reset hlasování</h2>
+      <p className="question">Reset je povolen pouze při zadání správného tokenu.</p>
       <div className="reset-row">
         <input
           type="password"
@@ -24,10 +24,11 @@ export function ResetPanel({
           disabled={loading}
         />
         <button
+          className="btn-danger"
           onClick={onReset}
           disabled={loading || token.trim().length === 0}
         >
-          Resetovat hlasy
+          Resetovat
         </button>
       </div>
     </section>

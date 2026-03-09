@@ -9,4 +9,5 @@ export type PollResponse = {
   question: string;
   options: PollOption[];
   totalVotes: number;
+  hasVoted: boolean;
 };

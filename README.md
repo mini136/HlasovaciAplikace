@@ -92,10 +92,12 @@ Base URL backendu: `http://localhost:40161`
 
 - Vrací otázku, možnosti a aktuální výsledky.
 - Používá se i pro „Zobrazit výsledky“ bez hlasování.
+- Vrací i `hasVoted` (jestli aktuální uživatel už hlasoval).
 
 ### `POST /api/poll/vote`
 
 - Uloží hlas a vrátí aktualizované výsledky.
+- Každý uživatel může hlasovat pouze jednou (identifikace podle IP adresy na backendu).
 - Body:
 
 ```json
@@ -105,6 +107,7 @@ Base URL backendu: `http://localhost:40161`
 ### `POST /api/poll/reset`
 
 - Vynuluje všechny hlasy pouze při správném tokenu.
+- Zároveň smaže záznamy o tom, kdo už hlasoval.
 - Body:
 
 ```json
@@ -171,6 +174,7 @@ docker compose up -d --build
 ## Pokrytí požadavků
 
 - F1 Hlasování: splněno (`POST /api/poll/vote`)
+- F1.1 Každý uživatel max 1 hlas: splněno (unikátní volič na backendu)
 - F2 Zobrazení výsledků bez hlasu: splněno (`GET /api/poll`)
 - F3 Reset tokenem: splněno (`POST /api/poll/reset`)
 - Sdílená persistentní data: splněno (MySQL + volume)
